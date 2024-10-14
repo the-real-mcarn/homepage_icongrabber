@@ -6,6 +6,8 @@ I wanted to add favicons to my bookmarks and tried to integrate that into Homepa
 ## Workings
 The script will look for entries in `bookmarks.yaml` and grab the favicons for entries that do not yet have an icon defined. If the icon has been downloaded successfully, the entry will be updated with the icon. If the icon could not be downloaded, it can be replaced with a fallback of your choosing.  
 
+An example setup where these are being used can be seen [here](https://arnweb.nl/start/).
+
 ## Setup
 ### Folder access
 This script will download favicons for bookmarks in your `bookmarks.yaml` to a folder. This folder needs to be mapped to the public folder for your Homepage instance `/app/public`. If you are running a docker container, this can be done via your `docker-compose.yml` file:
@@ -44,6 +46,9 @@ Simply run the script using python:
 python ./src/main.py
 ```
 The script has to be run every time you edit your bookmarks. You could put it on some sort of filesystem watcher or cron job but, unless you update your bookmarks a lot, I wouldn't recommend it. 
+
+> [!IMPORTANT]  
+> If your icons do not show up, you may need to recreate and restart your homepage instance. 
 
 ## Links
 - [Homepage](https://github.com/gethomepage/homepage) by Homepage Contributors
